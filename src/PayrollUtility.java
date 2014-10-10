@@ -1,8 +1,5 @@
 /*
- *  1)  Shahbaz Mughal 
- *  2)  Mario Lugo
- *  3)  Marcio Dasilva
- *  4)  Ezgi Camur
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur  
  */
 
 import java.text.NumberFormat;
@@ -21,6 +18,14 @@ public class PayrollUtility
     
     public static final double BONUS_TAX_RATE = 0.20;
     
+    /**
+     * The opeFile method opens the specified file and returns a reference to a
+     * Scanner object.
+     *
+     * @param double value
+     * @return A Scanner reference, if the file exists Otherwise, null is
+     * returned.
+     */
     
     public static String convertToCurrencyString(double value)
     {
