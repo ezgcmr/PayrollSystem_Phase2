@@ -1,3 +1,10 @@
+/*
+ *  1)  Shahbaz Mughal 
+ *  2)  Mario Lugo
+ *  3)  Marcio Dasilva
+ *  4)  Ezgi Camur
+ */
+
 import java.util.*;
 
 public class PayrollSystem_Phase2 
@@ -6,7 +13,7 @@ public class PayrollSystem_Phase2
     public static void main(String[] args) 
     {
         System.out.println("*********************************************************************");
-        System.out.println("*               Testing the HourlyEmployee class deneme              *");
+        System.out.println("*               Testing the HourlyEmployee class                    *");
         System.out.println("*********************************************************************");
                  
         System.out.println("\nTrying to create an HourlyEmployee with negative vacation hours.");

@@ -1,3 +1,10 @@
+/*
+ *  1)  Shahbaz Mughal 
+ *  2)  Mario Lugo
+ *  3)  Marcio Dasilva
+ *  4)  Ezgi Camur
+ */
+
 import java.util.ArrayList;
 
 public class HourlyEmployee extends Employee

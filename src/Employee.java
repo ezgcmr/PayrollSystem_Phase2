@@ -1,4 +1,12 @@
+/*
+ *  1)  Shahbaz Mughal 
+ *  2)  Mario Lugo
+ *  3)  Marcio Dasilva
+ *  4)  Ezgi Camur
+ */
+
 import java.util.ArrayList;
+//import java.util.Objects;
 
 public abstract class Employee implements Payable
 {
@@ -172,4 +180,14 @@ public abstract class Employee implements Payable
         //add another paycheck in Paycheck list
         listOfPaychecks.add(paycheck);
     }
+    
+//    @Override
+//    public int hashCode()
+//    {
+//    	int hash = 7;
+//    	hash = 47 * hash + Objects.hashCode(this.firstName);
+//    	hash = 47 * hash + Objects.hashCode(this.lastName);
+//    	hash = 47 * hash + Objects.hashCode(this.dateOfBirth);
+//    	
+//    }
 }

@@ -1,3 +1,10 @@
+/*
+ *  1)  Shahbaz Mughal 
+ *  2)  Mario Lugo
+ *  3)  Marcio Dasilva
+ *  4)  Ezgi Camur
+ */
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
