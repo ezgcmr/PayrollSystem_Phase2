@@ -18,7 +18,7 @@ public abstract class Employee implements Payable
     private ArrayList<Paycheck> listOfPaychecks;
       
     /**
-     * The Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired, Accrued Vacation Hours, 
+     * The Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired, Accrued Vacation Hours, 
      * Year to Date, List Of Paychecks
      *
      * @param id The employee's ID number.
@@ -56,7 +56,7 @@ public abstract class Employee implements Payable
     }
     
     /**
-     * The Overloading Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired
+     * The Overloading Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired
      *
      * @param id The employee's ID number.
      * @param first The employee's first name

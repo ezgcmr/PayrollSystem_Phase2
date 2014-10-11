@@ -12,8 +12,8 @@ public class HourlyEmployee extends Employee
     private double periodHours;  
     
   /**
-   * The Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired, Accrued Vacation Hours, 
-   * Year to Date, List Of Paychecks
+   * The Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired, Accrued Vacation Hours, 
+   * Year to Date, List Of Paychecks, hourly rate, period hours
    *
    * @param id The employee's ID number.
    * @param first The employee's first name
@@ -44,7 +44,7 @@ public class HourlyEmployee extends Employee
     }
     
     /**
-     * The Overloading Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired, Hourly rate, Period of Hours
+     * The Overloading Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired, Hourly rate, Period of Hours
      *
      * @param id The employee's ID number.
      * @param first The employee's first name
@@ -104,7 +104,7 @@ public class HourlyEmployee extends Employee
     /**
     setPeriodHours method
     @param rate
-    @exception setPeriodHours When rate is periodHrs.
+    @exception setPeriodHours When periodHrs is negative.
    */
     public void setPeriodHours(double periodHrs)
     {
