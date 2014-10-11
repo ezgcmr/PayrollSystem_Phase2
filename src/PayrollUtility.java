@@ -1,9 +1,11 @@
-/*
- *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur  
+/**
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur 
  */
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+
+/**This class represents payroll utility and has constant variables that we use in SalariedEmployee class*/
 
 public class PayrollUtility
 {
@@ -19,27 +21,29 @@ public class PayrollUtility
     public static final double BONUS_TAX_RATE = 0.20;
     
     /**
-     * The opeFile method opens the specified file and returns a reference to a
-     * Scanner object.
-     *
-     * @param double value
-     * @return A Scanner reference, if the file exists Otherwise, null is
-     * returned.
-     */
-    
+    convertToCurrencyString method
+    @return string format
+   */
     public static String convertToCurrencyString(double value)
     {
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         return String.format("%13s%n", fmt.format(value)); 
     }
     
+    /**
+    convertToCurrencyStringLeftAligned method
+    @return string format
+   */
     public static String convertToCurrencyStringLeftAligned(double value)
     {
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         return String.format("%s", fmt.format(value)); 
     }
     
-    //This method returns the element in the list found to be equal to the parameter. Otherwise, it returns null.
+    /**
+    findEmployee method
+    @return the employee in the list found to be equal to the parameter. Otherwise it returns null
+   */
     public static Employee findEmployee(ArrayList<Employee> employeeList, Employee employee)
     {
     	for ( Employee this_employee : employeeList )
@@ -51,7 +55,10 @@ public class PayrollUtility
 		return null;
     }
     
-    //This method returns the element in the list found to be equal to the parameter. Otherwise, it returns null.
+    /**
+    findPaycheck method
+    @return the paycheck in the list found to be equal to the parameter. Otherwise it returns null
+    */
     public static Paycheck findPaycheck(ArrayList<Paycheck> paycheckList, Paycheck paycheck)
     {
     	for ( Paycheck this_paycheck : paycheckList )
@@ -63,7 +70,10 @@ public class PayrollUtility
 		return null;
     }
     
-    //This method returns the element in the list found to be equal to the parameter. Otherwise, it returns null.
+    /**
+    findDepartment method
+    @return the department in the list found to be equal to the parameter. Otherwise, it returns null.
+    */
     public static Department findDepartment(ArrayList<Department> departmentList, Department department)
     {
     	for ( Department this_department : departmentList )
