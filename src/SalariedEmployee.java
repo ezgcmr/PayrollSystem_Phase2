@@ -24,7 +24,7 @@ public class SalariedEmployee extends Employee
      * @param vacationHrs The employee's vacation hours 
      * @param ytd The employee's year to date amount
      * @param paychecks The employee's paycheck
-     * @param slary The eEployee's salary
+     * @param salary The employee's salary
      * @exception SalariedEmployee constructor When salary is negative.
      */
     public SalariedEmployee(String id, String first, String last, String birth, String hired, double accumVacationHrs, double ytd, ArrayList<Paycheck> paychecks, double salary)
@@ -38,7 +38,7 @@ public class SalariedEmployee extends Employee
     }
     
     /**
-     * The Overloading Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired, Hourly rate, Period of Hours, salary
+     * The Overloading Constructor sets the employee's ID, First Name, Last Name, Date Of Birth, Date Hired, salary
      *
      * @param id The employee's ID number.
      * @param first The employee's first name
@@ -50,8 +50,11 @@ public class SalariedEmployee extends Employee
     public SalariedEmployee(String id, String first, String last, String birth, String hired, double salary)
     {
         super(id, first, last, birth, hired);
+        if( salary >= 0 )
+        	annualSalary = salary; 
+    	else
+    		throw new IllegalArgumentException("The salary cannot be negative");
         
-        annualSalary = salary;
     }
     
     /**
