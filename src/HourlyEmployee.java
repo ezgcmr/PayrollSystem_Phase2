@@ -1,19 +1,33 @@
-/*
- *  1)  Shahbaz Mughal 
- *  2)  Mario Lugo
- *  3)  Marcio Dasilva
- *  4)  Ezgi Camur
+/**
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur 
  */
-
 import java.util.ArrayList;
-
+/**
+ * This class extends the Employee class and it represents an employee that gets paid by the hour.
+ */
 public class HourlyEmployee extends Employee
 {
     // instance variables
     private double hourlyRate;
-    private double periodHours;
+    private double periodHours;  
+    
+  /**
+   * The Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired, Accrued Vacation Hours, 
+   * Year to Date, List Of Paychecks
+   *
+   * @param id The employee's ID number.
+   * @param first The employee's first name
+   * @param last The employee's last name
+   * @param birth The employee's birth date
+   * @param hired The employee's the date of hired
+   * @param vacationHrs The employee's vacation hours 
+   * @param ytd The employee's year to date amount
+   * @param paychecks The employee's paycheck
+   * @param rate The employee's hourly rate
+   * @param periodHrs The employee's period hours
+   * @exception Hourly Employee constructor When rate is negative.
+   */
         
-    // constructor
     public HourlyEmployee(String id, String first, String last, String birth, String hired, double vacationHrs, double ytd, ArrayList<Paycheck> paychecks, double rate, double periodHrs)
     {
         super(id, first, last, birth, hired, vacationHrs, ytd, paychecks);
@@ -29,7 +43,17 @@ public class HourlyEmployee extends Employee
     		throw new IllegalArgumentException("The period hours cannot be negative");
     }
     
-    // overloaded constructor
+    /**
+     * The Overloading Constructor sets employee ID, First Name, Last Name, Date Of Birth, Date Hired, Hourly rate, Period of Hours
+     *
+     * @param id The employee's ID number.
+     * @param first The employee's first name
+     * @param last The employee's last name
+     * @param birth The employee's birth date
+     * @param hired The employee's the date of hired
+     * @param rate The employee's hourly rate
+     * @param periodHrs The employee's period hours
+     */
     public HourlyEmployee(String id, String first, String last, String birth, String hired, double rate, double periodHrs)
     {
         super(id, first, last, birth, hired);
@@ -45,18 +69,29 @@ public class HourlyEmployee extends Employee
     		throw new IllegalArgumentException("The period hours cannot be negative");      
     }
     
-    // getter methods
+    /**
+    getHourlyRate method
+    @return The employee's hourly rate
+   */
     public double getHourlyRate()
     {
         return hourlyRate;
     }
     
+    /**
+    getPeriodHours method
+    @return The employee's period hours
+   */
     public double getPeriodHours()
     {
         return periodHours;
     }
     
-    // setter methods
+    /**
+    setHourlyRate method
+    @param rate
+    @exception setHourlyRate When rate is negative.
+   */
     public void setHourlyRate(double rate)
     {
     	// if the yearToDate parameter is negative, throw an exception.
@@ -66,6 +101,11 @@ public class HourlyEmployee extends Employee
     		throw new IllegalArgumentException("The hourly rate cannot be negative");
     }
     
+    /**
+    setPeriodHours method
+    @param rate
+    @exception setPeriodHours When rate is periodHrs.
+   */
     public void setPeriodHours(double periodHrs)
     {
     	if( periodHrs >= 0 )
@@ -74,7 +114,12 @@ public class HourlyEmployee extends Employee
     		throw new IllegalArgumentException("The period hours cannot be negative");
     }
     
-    @Override
+    /**
+     * @Override 
+     * The toString method returns a String containing the employee's data.
+     *
+     * @return A reference to a String.
+     */
     public String toString()
     {
         return  super.toString() + 
@@ -82,18 +127,30 @@ public class HourlyEmployee extends Employee
                 String.format("%-27s%s\n", "Period Hours:", periodHours );
     }
     
+    /**
+    calculateVacationHours method
+    @return 0
+   */
     public double calculateVacationHours()
     {
     	return 0;
     }
     
-    @Override
+    /**
+     * @Override
+     * calculateGrossAmount method 
+     * @return the gross amount that the hourly employee gets paid during a pay period.
+   */
     public double calculateGrossAmount()
     {
         return hourlyRate * periodHours;
     }
     
-    @Override
+    /**
+     * @Override
+     * calculateTaxDeduction method 
+     * @return the tax amount to be subtracted from the gross amount, which is calculated as a percentage of the gross amount.
+   */
     public double calculateTaxDeduction()
     {
         double taxRate = (calculateGrossAmount() < PayrollUtility.THRESHOLD) ? PayrollUtility.TAX_RATE_LESS_THAN_THRESHOLD : PayrollUtility.TAX_RATE_THRESHOLD_OR_MORE;
