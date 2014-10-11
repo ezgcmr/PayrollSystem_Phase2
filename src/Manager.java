@@ -3,6 +3,9 @@
  */
 
 import java.util.ArrayList;
+/** 
+ * This class extends the SalariedEmployee class and it represents a department’s manager. 
+ */
 
 public class Manager extends SalariedEmployee
 {
@@ -23,6 +26,7 @@ public class Manager extends SalariedEmployee
      * @param paychecks The employee's paycheck
      * @param salary The employee's salary
      * @param bonus The employee's bonus
+     * @exception Manager constructor When bonus is negative.
      */
     
     public Manager(String id, String first, String last, String birth, String hired, double accumVacationHrs, double ytd, ArrayList<Paycheck> paychecks, double salary, double bonus)
@@ -57,13 +61,20 @@ public class Manager extends SalariedEmployee
    		throw new IllegalArgumentException("The bonus cannot be negative");
     }
     
-    // getter method
+    /**
+    getWeeklyBonus method
+    @return The employee's weekly bonus
+   */
     public double getWeeklyBonus()
     {
         return weeklyBonus;
     }
     
-    // setter method
+    /**
+    setWeeklyBonus method
+    @param bonus
+    @exception setWeeklyBonus When bonus is negative.
+   */
     public void setWeeklyBonus(double bonus)
     {
     	if( bonus >= 0 )
@@ -72,6 +83,10 @@ public class Manager extends SalariedEmployee
     		throw new IllegalArgumentException("The bonus cannot be negative");
     }
     
+    /**
+    getBonusAfterTax method
+    @return the bonus amount that the manager gets during a pay period after deducting taxes
+   */
     public double getBonusAfterTax()
     {
         return weeklyBonus - (weeklyBonus * PayrollUtility.BONUS_TAX_RATE);
@@ -82,7 +97,11 @@ public class Manager extends SalariedEmployee
         */
     }
     
-    @Override
+    /**
+     * @Override 
+     * The toString method returns a String containing the employee's data.
+     * @return A reference to a String.
+     */
     public String toString()
     {
         return  super.toString() +
