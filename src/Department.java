@@ -18,7 +18,7 @@ public class Department
      * The Constructor sets the department's ID, name, manager, the list of employee
      *
      * @param id The department's ID number.
-     * @param first The department's name
+     * @param name The department's name
      * @param manager The manager
      * @param employees The list of employee
      */ 
@@ -35,7 +35,7 @@ public class Department
      * The Overloading Constructor sets the department's ID, name
      *
      * @param id The department's ID number.
-     * @param first The department's name
+     * @param name The department's name
      */ 
     public Department(String id, String name)
     {
@@ -118,7 +118,7 @@ public class Department
     
     /**
      * @Override 
-     * The toString method returns a String containing a department information.
+     * The toString method returns a String containing a department information and list of employees.
      * @return A reference to a String.
      */
     public String toString()

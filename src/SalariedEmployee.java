@@ -81,7 +81,7 @@ public class SalariedEmployee extends Employee
     
     /**
      * @Override 
-     * The toString method returns a String containing the employee's data.
+     * The toString method returns a String containing the employee's data and salary information.
      * @return A reference to a String.
      */
     public String toString()
