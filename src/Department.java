@@ -1,5 +1,11 @@
-import java.util.ArrayList;
+/**
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur 
+ */
 
+import java.util.ArrayList;
+/**
+ * This class represents a department within the company.
+ */
 public class Department 
 {
     // instance variables
@@ -8,7 +14,15 @@ public class Department
     private Manager departmentManager;
     private ArrayList<Employee> listOfEmployees;
     
-    // constructor
+    /**
+     * The Constructor sets the department's ID, name, manager, the list of employee
+     *
+     * @param id The department's ID number.
+     * @param name The department's name
+     * @param manager The manager
+     * @param employees The list of employee
+     */ 
+   
     public Department(String id, String name, Manager manager, ArrayList<Employee> employees)
     {
         departmentID = id;
@@ -17,7 +31,12 @@ public class Department
         listOfEmployees = employees;
     }
     
-    // overloaded constructor
+    /**
+     * The Overloading Constructor sets the department's ID, name
+     *
+     * @param id The department's ID number.
+     * @param name The department's name
+     */ 
     public Department(String id, String name)
     {
         departmentID = id;
@@ -25,49 +44,83 @@ public class Department
         listOfEmployees = new ArrayList<>();
     }
     
-    // getter methods
+    /**
+    getDepartmentID method
+    @return The deparment's id
+   */
     public String getDepartmentID()
     {
         return departmentID;
     }
     
+    /**
+    getDepartmentName method
+    @return The deparment's name
+   */
     public String getDepartmentName()
     {
         return departmentName;
     }
     
+    /**
+    getDepartmentManager method
+    @return The deparment's manager
+   */
     public Manager getDepartmentManager()
     {
         return departmentManager;
     }
     
+    /**
+    getListOfEmployees method
+    @return The deparment's list Of employees
+   */
     public ArrayList<Employee> getListOfEmployees()
     {
         return listOfEmployees;
     }
     
-    // setter methods
+    /**
+    setDepartmentID method
+    @param id
+   */
     public void setDepartmentID(String id)
     {
         departmentID = id;
     } 
     
+    /**
+    setDepartmentName method
+    @param name
+   */
     public void setDepartmentName(String name)
     {
         departmentName = name;
     }
     
+    /**
+    setDepartmentManager method
+    @param deptManager
+   */
     public void setDepartmentManager(Manager deptManager)
     {
         departmentManager = deptManager;
     }
     
+    /**
+    setListOfEmployees method
+    @param employeeList
+   */
     public void setListOfEmployees(ArrayList<Employee> employeeList)
     {
         listOfEmployees = employeeList;
     }
     
-    @Override
+    /**
+     * @Override 
+     * The toString method returns a String containing a department information and list of employees.
+     * @return A reference to a String.
+     */
     public String toString()
     {
         return  String.format("\n%-27s%s\n", "Department ID:", departmentID) +
@@ -79,7 +132,11 @@ public class Department
                 "------------------------------------------------------------------\n";
     }
     
-    @Override //This method compares two Department objects and returns true if they both have the same value for the departmentID and departmentName instance variables.
+    /**
+    *@Override This method compares two Department objects and 
+    *returns true if they both have the same value for the departmentID and departmentName instance variables. 
+    *Otherwise, null is returned.
+	*/
     public boolean equals(Object obj) 
     {
 	    // check that the type of the parameter is Employee

@@ -1,40 +1,71 @@
+/**
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur 
+ */
+
 import java.util.ArrayList;
+
+/**This class represents the company that is using this software*/
 
 public class Company
 {
     // instance variables
     private String companyName;
     private ArrayList<Department> departmentList;
-        
-    // constructor
+      
+    
+    /**
+     * The Constructor sets the company's name, the list of department
+     *
+     * @param name The company's name
+     * @param departments The list of departments
+     */ 
     public Company(String name, ArrayList<Department> departments)
     {
         companyName = name;
         departmentList = departments;
     }
 
-    // getter methods
+    /**
+    getCompanyName method
+    @return The company's name
+   */
     public String getCompanyName()
     {
         return companyName;
     }
 
+    /**
+    getDepartmentList method
+    @return The department list
+   */
     public ArrayList<Department> getDepartmentList()
     {
         return departmentList;
     }
 
-    // setter methods
+    /**
+    setCompanyName method
+    @param name
+   */
     public void setCompanyName(String name)
     {
         companyName = name;
     }
 
+    /**
+    setDepartmentList method
+    @param departments
+   */
     public void setDepartmentList(ArrayList<Department> departments)
     {
         departmentList = departments;
     }
     
+    /**
+    generatePayroll method
+    @param the employee's begin date, end date, pay date
+    @return the payroll information of the employee
+   */ 
     public String generatePayroll(String beginDate, String endDate, String payDate)
     {
         String output = "";
@@ -62,7 +93,7 @@ public class Company
             output += getPayrollLine( "Tax:", tax );
             output += getPayrollLine( "Net Pay:", netPay );
             
-            // add a paycheck to the manager, clling contsractor to create a paycheck object form Paycheck class
+            // add a paycheck to the manager, calling constructor to create a paycheck object from Paycheck class
             paycheck = new Paycheck(manager.getEmployeeID(), beginDate, endDate, payDate, grossPay, tax, bonus, netPay);
             manager.addPaycheck(paycheck);
             
@@ -97,18 +128,23 @@ public class Company
         }
         return output;
     }
-    //bu iki tane getNAme ve getPayrollLine for formatting
+    //method for formatting
     private String getNameLine(String name, double value)
     {
         return String.format("%-40s", name) + "Gross Amount:" + PayrollUtility.convertToCurrencyString(value);
     }
     
+    //method for formatting
     private String getPayrollLine(String title, double value)
     {
         return String.format("%53s", title) + PayrollUtility.convertToCurrencyString(value);
     }
     
-    @Override
+    /**
+     * @Override 
+     * The toString method returns a String containing a company name and department list.
+     * @return A reference to a String.
+     */
     public String toString()
     {
         return  String.format("%-27s%s\n", "Company Name:", getCompanyName() ) +
