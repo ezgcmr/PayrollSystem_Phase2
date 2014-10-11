@@ -1,10 +1,10 @@
-/*
- *  1)  Shahbaz Mughal 
- *  2)  Mario Lugo
- *  3)  Marcio Dasilva
- *  4)  Ezgi Camur
+/**
+ *  @author  Shahbaz Mughal, Mario Lugo, Marcio Dasilva, Ezgi Camur 
  */
 
+/**
+  interface Payable method
+*/
 public interface Payable {
 	double calculateGrossAmount();
 	double calculateTaxDeduction();

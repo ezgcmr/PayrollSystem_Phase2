@@ -99,7 +99,7 @@ public class Manager extends SalariedEmployee
     
     /**
      * @Override 
-     * The toString method returns a String containing the employee's data.
+     * The toString method returns a String containing the employee's data and bonus information.
      * @return A reference to a String.
      */
     public String toString()
